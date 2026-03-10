@@ -51,7 +51,7 @@ app.use(
   cors({
     origin: [ "http://localhost:5173",
       "http://127.0.0.1:5173",
-      "http://192.168.43.180:5173"], // replace with your PC LAN IP
+      "http://192.168.43.180:5173"], // 
     credentials: true,
   })
 );
@@ -74,7 +74,13 @@ await connectDb();
 // --------------------------
 // Start server (LAN-ready)
 // --------------------------
-const PORT = process.env.PORT || 5000;
+if(process.env.NODE_ENV !== "production"){
+  const PORT = process.env.PORT || 5000;
 server.listen(PORT, "0.0.0.0", () => {
   console.log(`Server is running on PORT: ${PORT} and accessible in LAN`);
 });
+
+}
+
+// Exporting server for vercel
+export default server

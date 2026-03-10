@@ -13,7 +13,7 @@ function App() {
   if (isCheckingAuth) return null; 
 
   return (
-    <div className='bg-[url("./assets/bgImage.svg")] bg-no-repeat h-screen'> {/* ✅ fixed path + h-screen */}
+    <div className='bg-[url("/bgImage.svg")] bg-no-repeat h-screen'> {/* ✅ fixed path + h-screen */}
       <Toaster />
       <Routes>
         <Route path="/" element={authUser ? <Home /> : <Navigate to="/login" />} />
