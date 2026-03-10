@@ -51,7 +51,8 @@ app.use(
   cors({
     origin: [ "http://localhost:5173",
       "http://127.0.0.1:5173",
-      "http://192.168.43.180:5173"], // 
+      "http://192.168.43.180:5173",
+     "https://chat-app-neon-gamma.vercel.app"], // 
     credentials: true,
   })
 );
